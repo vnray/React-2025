@@ -10,7 +10,7 @@ const Cards = () => {
   }
   callApi();
 
-  return <h1> card section</h1>;
+  return <h1> card section updated with live</h1>;
 };
 
 export default Cards;
