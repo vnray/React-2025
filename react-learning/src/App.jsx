@@ -1,13 +1,21 @@
-import Cards from "./Components/Body/Cards";
-import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
+import About from "./Components/Pages/About.jsx";
+import Contact from "./Components/Pages/Contact.jsx";
+import Layout from "./Components/Layout/Layout.jsx";
+import Home from "./Components/Pages/Home.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
-      <Cards />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

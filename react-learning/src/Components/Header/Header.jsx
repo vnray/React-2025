@@ -1,20 +1,30 @@
-// import {logo} from "./assets/myImages.jpg"
-// import {logo} from "../assets/myImages.jpg"
+import { Link } from "react-router-dom";
+
+import logo1 from "../../assets/images.jpg";
+
 const Header = () => {
   return (
     <header>
-      <div className="container">
+      <div className="container navbar">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={logo1} alt="logo" />
         </div>
         <nav>
           <ul>
-            {/* <Link to={"/"}><li>Home</li></Link>
-            <Link to={"/about"}><li>About</li></Link>
-            <Link to={"/contact"}><li>Contact</li></Link> */}
-            <li>Home</li>
+            <Link to={"/"}>
+              <li>Home</li>
+            </Link>
+
+            <li>
+              <Link to={"/about"}>About </Link>
+            </li>
+
+            <Link to={"/contact"}>
+              <li>Contact</li>
+            </Link>
+            {/* <li>Home</li>
             <li>About</li>
-            <li>Contact</li>
+            <li>Contact</li> */}
           </ul>
         </nav>
         <div className="user">
