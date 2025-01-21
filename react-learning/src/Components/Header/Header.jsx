@@ -18,7 +18,9 @@ const Header = () => {
             <li>
               <Link to={"/about"}>About </Link>
             </li>
-
+            <li>
+              <Link to={"/res"}>Menu </Link>
+            </li>
             <Link to={"/contact"}>
               <li>Contact</li>
             </Link>
