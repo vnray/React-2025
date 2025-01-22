@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Img_CDN } from "../ImgCdn/Img_CDN";
+import RestaurantCard from "./RestaurantCard";
 
 const Cards = () => {
   const [restrauntList, setRestrauntList] = useState([]);
@@ -44,18 +45,7 @@ const Cards = () => {
       <div className="cards">
         {filterRes.map((restraunt) => {
           return (
-            <div className="card" key={restraunt.info.id}>
-              <img
-                src={Img_CDN + restraunt.info.cloudinaryImageId}
-                alt="banner"
-              />
-              <div className="cardInfo">
-                <h3>{restraunt.info.name}</h3>
-                <h3>{restraunt.info.avgRating}</h3>
-                <h4>{restraunt.info.cuisines.join(", ")}</h4>
-                <h4>{restraunt.info.locality}</h4>
-              </div>
-            </div>
+           <RestaurantCard restraunt={restraunt} key={restraunt.info.id}/>
           );
         })}
       </div>
