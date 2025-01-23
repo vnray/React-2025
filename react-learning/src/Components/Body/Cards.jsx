@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Img_CDN } from "../ImgCdn/Img_CDN";
 import RestaurantCard from "./RestaurantCard";
-
+import {Link} from "react-router-dom"
+import Menu from "./Menu";
 const Cards = () => {
   const [restrauntList, setRestrauntList] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -33,6 +34,7 @@ const Cards = () => {
 
   return (
     <div className="container">
+      <Menu/>
       <div className="search">
         <input
           type="text"
@@ -45,7 +47,7 @@ const Cards = () => {
       <div className="cards">
         {filterRes.map((restraunt) => {
           return (
-           <RestaurantCard restraunt={restraunt} key={restraunt.info.id}/>
+           <Link to={"/restraunt/"+restraunt.info.id} key={restraunt.info.id}><RestaurantCard restraunt={restraunt} key={restraunt.info.id}/></Link>
           );
         })}
       </div>

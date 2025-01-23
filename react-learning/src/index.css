@@ -4,7 +4,7 @@
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -70,4 +70,62 @@ nav ul li a {
 
 header {
     background-color: brown;
+}
+.navWrapper{
+    padding-top: 16px;
+}
+.itemWrapper{
+    display: flex;
+}
+.wrapper img{
+    width: 120px;
+}
+.menuCards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menuCardImg{
+    margin-left: 60px;
+    max-height: 174px;
+    min-width: 156px;
+}
+.menuCardImg img{
+    object-fit: cover;
+    width: 156px;
+    height: 144px;
+    border-radius: 12px;
+}
+.menuCardWrapper{
+    margin: 0 auto;
+    max-width: 700px;
+    min-width: 700px;
+}
+.divider{
+    border-bottom: .5px solid #d3d3d3;
+    height: .5px;
+    margin: 20px 0;
+}
+.addBtn{
+    text-align: center;
+    position: relative;
+    top: -20px;
+}
+.addBtn button{
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    height: 40px;
+    border-radius: 8px;
+    width: 120px;
+    overflow: hidden;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgb(27, 166, 114);
 }
