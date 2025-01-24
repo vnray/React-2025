@@ -3,21 +3,26 @@
     padding: 0;
 }
 
-.container {
+/* .container {
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 .cards {
-    display: flex;
+    display: grid;
     justify-content: left;
     cursor: pointer;
     flex-wrap: wrap;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
+/* .cards a {
+    width: 23%;
+} */
+
 .card {
-    width: 274px;
+    width: 100%;
     border: 1px solid #80808036;
     border-radius: 16px;
     padding-bottom: 10px;
@@ -71,47 +76,58 @@ nav ul li a {
 header {
     background-color: brown;
 }
-.navWrapper{
+
+.navWrapper {
     padding-top: 16px;
+    overflow: hidden;
 }
-.itemWrapper{
+
+.itemWrapper {
     display: flex;
 }
-.wrapper img{
+
+.wrapper img {
     width: 120px;
 }
-.menuCards{
+
+.menuCards {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.menuCardImg{
+
+.menuCardImg {
     margin-left: 60px;
     max-height: 174px;
     min-width: 156px;
 }
-.menuCardImg img{
+
+.menuCardImg img {
     object-fit: cover;
     width: 156px;
     height: 144px;
     border-radius: 12px;
 }
-.menuCardWrapper{
+
+.menuCardWrapper {
     margin: 0 auto;
     max-width: 700px;
     min-width: 700px;
 }
-.divider{
+
+.divider {
     border-bottom: .5px solid #d3d3d3;
     height: .5px;
     margin: 20px 0;
 }
-.addBtn{
+
+.addBtn {
     text-align: center;
     position: relative;
     top: -20px;
 }
-.addBtn button{
+
+.addBtn button {
     background: rgb(255, 255, 255);
     border: 1px solid rgba(2, 6, 12, 0.15);
     height: 40px;
@@ -128,4 +144,11 @@ header {
     line-height: 24px;
     text-transform: uppercase;
     color: rgb(27, 166, 114);
+}
+
+@media (min-width: 961px) {
+    .container {
+        margin-left: calc(10% + 36px);
+        margin-right: calc(10% + 36px);
+    }
 }

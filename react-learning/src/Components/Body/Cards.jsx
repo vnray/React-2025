@@ -2,15 +2,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Img_CDN } from "../ImgCdn/Img_CDN";
 import RestaurantCard from "./RestaurantCard";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import Menu from "./Menu";
 const Cards = () => {
   const [restrauntList, setRestrauntList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [title, setTitle] = useState("");
-  useEffect(() => {
-    callApi();
-  }, []);
 
   async function callApi() {
     // https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4694432&lng=77.0325445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
@@ -31,10 +28,12 @@ const Cards = () => {
     // ) ||
     // restraunt.info.locality.toLowerCase().includes(searchText.toLowerCase())
   });
-
+  useEffect(() => {
+    callApi();
+  }, []);
   return (
     <div className="container">
-      <Menu/>
+      <Menu />
       <div className="search">
         <input
           type="text"
@@ -47,7 +46,12 @@ const Cards = () => {
       <div className="cards">
         {filterRes.map((restraunt) => {
           return (
-           <Link to={"/restraunt/"+restraunt.info.id} key={restraunt.info.id}><RestaurantCard restraunt={restraunt} key={restraunt.info.id}/></Link>
+            <Link
+              to={"/restraunt/" + restraunt.info.id}
+              key={restraunt.info.id}
+            >
+              <RestaurantCard restraunt={restraunt} key={restraunt.info.id} />
+            </Link>
           );
         })}
       </div>
