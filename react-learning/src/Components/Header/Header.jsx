@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
 import logo1 from "../../assets/images.jpg";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItem = useSelector((store) => store.cart.item);
   return (
     <header>
       <div className="container navbar">
@@ -25,7 +27,7 @@ const Header = () => {
               <li>Contact</li>
             </Link>
             <Link to={"/cart"}>
-              <li>Cart</li>
+              <li>Cart:{cartItem.length}</li>
             </Link>
           </ul>
         </nav>

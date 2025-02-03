@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import menuIcon from "../../assets/menuIcon.png";
 import { Img_CDN } from "../ImgCdn/Img_CDN";
-import { useSelector } from "react-redux";
-import store from "../utils/store";
+import { useDispatch, useSelector } from "react-redux";
+// import store from "../utils/store";
 import { addItem } from "../utils/CartSlice";
 const RestaurantMenu = () => {
   const [menu, setMenu] = useState([]);
@@ -28,7 +28,7 @@ const RestaurantMenu = () => {
       console.log(error);
     }
   };
-  const dispatch = useSelector();
+  const dispatch = useDispatch();
   const handleAdd = (item) => {
     dispatch(addItem(item));
   };
