@@ -12,7 +12,7 @@ const Cards = () => {
   async function callApi() {
     // https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4694432&lng=77.0325445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
     const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4694432&lng=77.0325445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING  "
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4694432&lng=77.0325445&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await res.json();
     const title = data.data.cards[1].card.card.header.title;
@@ -42,7 +42,7 @@ const Cards = () => {
         />
         <button>Search</button>
       </div>
-      <h2>{title}</h2>
+      <h2></h2>
       <div className="cards">
         {filterRes.map((restraunt) => {
           return (

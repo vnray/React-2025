@@ -4,20 +4,25 @@ import Layout from "./Components/Layout/Layout.jsx";
 import Card from "./Components/Body/Cards.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RestaurantMenu from "./Components/Body/RestaurantMenu.jsx";
-
+import { Provider } from "react-redux";
+import store from "./Components/utils/store.js";
+import Cart from "./Components/Cart.jsx";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Card/>} />
-            <Route path="restraunt/:resId" element={<RestaurantMenu/>}/>
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Card />} />
+              <Route path="restraunt/:resId" element={<RestaurantMenu />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="cart" element={<Cart />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 }

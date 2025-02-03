@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import menuIcon from "../../assets/menuIcon.png";
 import { Img_CDN } from "../ImgCdn/Img_CDN";
+import { useSelector } from "react-redux";
+import store from "../utils/store";
+import { addItem } from "../utils/CartSlice";
 const RestaurantMenu = () => {
   const [menu, setMenu] = useState([]);
   const { resId } = useParams();
-
+  useEffect(() => {
+    menuData();
+  }, []);
   const menuData = async () => {
     try {
       const res = await fetch(
@@ -23,10 +28,11 @@ const RestaurantMenu = () => {
       console.log(error);
     }
   };
-  useEffect(() => {
-    menuData();
-  }, []);
-  // console.log("menu :" + Object.values(menu))
+  const dispatch = useSelector();
+  const handleAdd = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <>
       <h2>this is id:</h2>
@@ -47,7 +53,7 @@ const RestaurantMenu = () => {
                     alt={item.card.info.name}
                   />
                   <div className="addBtn">
-                    <button>ADD</button>
+                    <button onClick={() => handleAdd(item)}>ADD</button>
                     <p>Customisable</p>
                   </div>
                 </div>
