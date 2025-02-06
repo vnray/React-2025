@@ -74,7 +74,8 @@ nav ul li a {
 }
 
 header {
-    background-color: brown;
+    background-color: #fff;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
 }
 
 .navWrapper {
@@ -144,8 +145,20 @@ header {
     line-height: 24px;
     text-transform: uppercase;
     color: rgb(27, 166, 114);
+    padding: 0 5px;
 }
-
+.addBtn button:hover{
+    background-color: #02060c26;
+}
+.itemQuantatity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.menuCard{
+    margin-bottom: 20px;
+}
 @media (min-width: 961px) {
     .container {
         margin-left: calc(10% + 36px);
