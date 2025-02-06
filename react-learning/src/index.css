@@ -53,7 +53,7 @@
 }
 
 .logo img {
-    width: 100px;
+    width: 48px;
 }
 
 nav ul {
@@ -76,6 +76,7 @@ nav ul li a {
 header {
     background-color: #fff;
     box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+    padding: 16px 0;
 }
 
 .navWrapper {

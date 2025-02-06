@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
                 <div className="menuCardItem">
                   <img src={menuIcon} alt="menuicon" />
                   <h3>{item.card.info.name}</h3>
-                  <h3>₹{item.card.info.price / 100}</h3>
+                  <h3>₹{(item.card.info.price) / 100}</h3>
                   <p>{item.card.info.description}</p>
                 </div>
                 <div className="menuCardImg">

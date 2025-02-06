@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import logo1 from "../../assets/logo.png";
+import logo1 from "../../assets/logo1.png";
 import { useSelector } from "react-redux";
 
 const Header = () => {
